@@ -63,11 +63,11 @@ client.on('ready', async () => {
 client.on("interactionCreate", async (interaction) => {
     if (interaction.isCommand()) runCommand(interaction, client);
     else if (interaction.isModalSubmit()) {
-        const { customId, fields, reply } = interaction;
+        const { customId, fields } = interaction;
         if (customId === 'myModal') {
-            reply(`Thank you for submitting! Here is what you put:\n\t**Hash > **${fields.getTextInputValue('hashInput')}\n\t**Misc > **${fields.getTextInputValue('textInput')}`);
+            interaction.reply(`Thank you for submitting! Here is what you put:\n\t**Hash > **${fields.getTextInputValue('hashInput')}\n\t**Misc > **${fields.getTextInputValue('textInput')}`);
         } else if (customId === 'myOtherModal') {
-            reply(`Thanks for your wonderful essay. This is what I got from you: ${fields.getTextInputValue('essayInput')}`);
+            interaction.reply(`Thanks for your wonderful essay. This is what I got from you: ${fields.getTextInputValue('essayInput')}`);
         }
     }
 })

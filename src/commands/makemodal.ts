@@ -1,5 +1,4 @@
 import { TextInputComponent, CommandInteraction, Modal, ModalActionRowComponent, MessageActionRow, MessageSelectMenu, MessageSelectOptionData } from "discord.js";
-import { userInfo } from "os";
 import { Command } from "../interfaces/CommandInt";
 
 export default class extends Command {
